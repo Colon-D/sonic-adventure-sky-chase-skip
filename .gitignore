@@ -363,3 +363,13 @@ FodyWeavers.xsd
 
 Devtracker.Dump
 *.dt
+
+################
+## My ignores ##
+################
+
+# vs
+out/build/
+CMakeSettings.json
+# - cmake?
+build
