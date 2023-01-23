@@ -6,8 +6,6 @@ add_library("${PROJECT_NAME}" SHARED
     "src/main.cpp"
 )
 target_include_directories("${PROJECT_NAME}" PUBLIC "include")
-# todo: is this needed?
-# target_compile_features("${PROJECT_NAME}" PRIVATE cxx_std_11)
 
 add_subdirectory(extern)
 target_link_libraries("${PROJECT_NAME}" PUBLIC
