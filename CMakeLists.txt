@@ -6,6 +6,7 @@ add_library("${PROJECT_NAME}" SHARED
     "src/main.cpp"
 )
 target_include_directories("${PROJECT_NAME}" PUBLIC "include")
+target_compile_features("${PROJECT_NAME}" PRIVATE cxx_std_17)
 
 add_subdirectory(extern)
 target_link_libraries("${PROJECT_NAME}" PUBLIC
@@ -26,13 +27,17 @@ IF(EXISTS "${SONIC_ADVENTURE_DX_DIRECTORY}")
     )
     # set runtime output directory to mod directory
     set_target_properties("${PROJECT_NAME}" PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY_DEBUG "${MOD_DIRECTORY}"
-        RUNTIME_OUTPUT_DIRECTORY_RELEASE "${MOD_DIRECTORY}"
+        RUNTIME_OUTPUT_DIRECTORY "${MOD_DIRECTORY}"
     )
     # copy files from "resources/SADXModManager_mod" to mod directory
     configure_file(
         "${CMAKE_SOURCE_DIR}/resources/SADXModManager_mod/mod.ini"
         "${MOD_DIRECTORY}/mod.ini"
+        COPYONLY
+    )
+    configure_file(
+        "${CMAKE_SOURCE_DIR}/resources/SADXModManager_mod/configschema.xml"
+        "${MOD_DIRECTORY}/configschema.xml"
         COPYONLY
     )
 ELSE()

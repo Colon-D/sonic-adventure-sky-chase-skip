@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ConfigSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonicretro.org">
+	<Groups>
+		<Group name="Settings" display="Settings">
+			<Property name="Boost Speed" type="int" defaultvalue="15">
+				<HelpText>
+					Default: 15.
+				</HelpText>
+			</Property>
+			<Property name="Boost Button" type="Buttons" defaultvalue="B">
+				<HelpText>
+					Default: B.
+
+					The Buttons enum is that of the Sonic Adventure DX Mod Loader which is based on the Dreamcast controller.
+					Input Mod is needed for the C, D, and Z buttons.
+				</HelpText>
+			</Property>
+			<Property name="Disable Boost Button from performing other actions in Sky Chase" type="bool" defaultvalue="true">
+				<HelpText>
+					Default: True.
+				</HelpText>
+			</Property>
+		</Group>
+	</Groups>
+	<Enums>
+		<Enum name="Buttons">
+			<EnumMember name="A"/>
+			<EnumMember name="B"/>
+			<EnumMember name="X"/>
+			<EnumMember name="Y"/>
+			<EnumMember name="D-Pad Up"/>
+			<EnumMember name="D-Pad Down"/>
+			<EnumMember name="D-Pad Left"/>
+			<EnumMember name="D-Pad Right"/>
+			<EnumMember name="L"/>
+			<EnumMember name="R"/>
+			<EnumMember name="Start"/>
+			<EnumMember name="C"/>
+			<EnumMember name="D"/>
+			<EnumMember name="Z"/>
+		</Enum>
+	</Enums>
+</ConfigSchema>
